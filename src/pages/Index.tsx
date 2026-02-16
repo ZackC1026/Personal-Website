@@ -14,13 +14,13 @@ const Index = () => {
           backgroundImage: `url(${background})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'blur(4px)',
+          filter: 'blur(2px)',
           transform: 'scale(1.05)',
         }}
       />
       <Navbar />
       <section className="container max-w-5xl px-6 py-6 flex-grow flex items-center justify-center relative z-10">
-        <div className="flex flex-col md:flex-row items-center gap-12 bg-black/75 p-8 md:p-12 rounded-xl backdrop-blur-sm border border-white/10">
+        <div className="flex flex-col md:flex-row items-center gap-12 bg-black/40 p-8 md:p-12 rounded-xl backdrop-blur-sm border border-white/10">
           <div className="w-full md:w-1/2">
             <div className="rounded-sm p-2 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0)_100%)]">
               <img
