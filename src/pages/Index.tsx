@@ -42,6 +42,8 @@ const Index = () => {
               Feel free to check out my resume & portfolio, my blog, or my photos!
             </p>
 
+
+
           </div>
         </div>
       </section>

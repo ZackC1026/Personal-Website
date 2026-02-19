@@ -1,12 +1,14 @@
 import Navbar from "@/components/Navbar";
 import PhotoCategoryCard from "@/components/PhotoCategoryCard";
 
+import birdsThumbnail from "@/assets/IMG_9506_comp.jpg";
+
 const Showcase = () => {
   const categories = [
     {
       title: "Birds",
       description: "Capturing the beauty of avian life across Canada.",
-      image: "", // Insert image URL here
+      image: birdsThumbnail,
       to: "/photography/birds"
     },
     {
