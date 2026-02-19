@@ -1,6 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Menu, X, Mail, Linkedin, ChevronDown } from "lucide-react";
+import { Menu, X, Mail, Linkedin, ChevronDown, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import {
   DropdownMenu,
@@ -20,14 +20,26 @@ const navItems = [
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <nav className="w-full border-b border-neutral-800 bg-black sticky top-0 z-50">
       <div className="container max-w-5xl px-6 py-4 flex items-center justify-between relative">
-        <Link to="/" className="font-heading text-lg font-semibold text-white z-10">
-          Zack Chen
-        </Link>
+        <div className="flex items-center gap-4 z-10">
+          {location.pathname.startsWith("/photography/") && (
+            <button
+              onClick={() => navigate("/photography")}
+              className="text-white hover:text-blue-400 transition-colors"
+              aria-label="Go back to photography"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+          )}
+          <Link to="/" className="font-heading text-lg font-semibold text-white">
+            Zack Chen
+          </Link>
+        </div>
 
         {/* Desktop navigation - Centered */}
         <ul className="hidden md:flex items-center gap-6 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 whitespace-nowrap">
