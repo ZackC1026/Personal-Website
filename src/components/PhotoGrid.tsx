@@ -61,7 +61,7 @@ const PhotoGrid = ({ photos }: PhotoGridProps) => {
                             )}
                         </div>
 
-                        <DialogContent className="max-w-[95vw] max-h-[95vh] w-auto h-auto p-0 bg-transparent border-none shadow-none flex items-center justify-center outline-none">
+                        <DialogContent className="max-w-[95vw] max-h-[95vh] w-auto h-auto p-0 bg-transparent border-none shadow-none flex items-center justify-center outline-none [&>button]:w-10 [&>button]:h-10 [&>button]:bg-black/50 [&>button]:hover:bg-black/70 [&>button]:text-white [&>button]:rounded-md [&>button]:top-4 [&>button]:right-4 [&>button]:flex [&>button]:items-center [&>button]:justify-center [&>button>svg]:w-5 [&>button>svg]:h-5">
                             <DialogTitle className="sr-only">{photo.alt || "Full resolution photo"}</DialogTitle>
                             <div className="relative">
                                 <img

@@ -14,8 +14,8 @@ const navItems = [
   { label: "Resume & Portfolio", path: "/experience", showOnMobile: false, showOnDesktop: true },
   { label: "Resume", mobileLabel: "Resume", path: "/resume", showOnMobile: true, showOnDesktop: false },
   { label: "Portfolio", mobileLabel: "Portfolio", path: "/portfolio", showOnMobile: true, showOnDesktop: false },
-  { label: "Blog", path: "/blog", showOnMobile: true, showOnDesktop: true },
   { label: "Photography Showcase", mobileLabel: "Photos", path: "/photography", showOnMobile: true, showOnDesktop: true },
+  { label: "Blog", path: "/blog", showOnMobile: true, showOnDesktop: true },
 ];
 
 const Navbar = () => {
