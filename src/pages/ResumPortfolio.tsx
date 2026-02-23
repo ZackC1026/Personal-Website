@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
+import { ExternalLink } from "lucide-react";
 
 
 const ResumPortfolio = () => {
@@ -9,7 +10,17 @@ const ResumPortfolio = () => {
             <div className="flex-grow flex flex-col md:flex-row overflow-hidden">
                 {/* Resume Section */}
                 <section className="w-full md:w-1/2 overflow-y-auto p-6 md:p-8 flex flex-col md:border-r border-gray-200 min-h-[calc(100vh-64px)] md:min-h-0">
-                    <h1 className="font-heading text-4xl font-bold text-foreground mb-6 underline decoration-4 underline-offset-8 decoration-gray-300">Resume</h1>
+                    <a
+                        href="https://www.overleaf.com/read/kmxqfqwpzydx#561208"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-fit mb-6 block group"
+                    >
+                        <div className="flex items-center gap-3">
+                            <h1 className="font-heading text-4xl font-bold text-foreground underline decoration-4 underline-offset-8 decoration-gray-300 group-hover:text-blue-600 group-hover:decoration-blue-400 transition-colors cursor-pointer">Resume</h1>
+                            <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" />
+                        </div>
+                    </a>
 
                     <div className="space-y-8">
                         {/* Education */}
@@ -32,7 +43,7 @@ const ResumPortfolio = () => {
                                 {/* Downhole Battery Inc */}
                                 <div className="border-l-2 border-gray-200 pl-4 py-1">
                                     <div className="flex justify-between items-start mb-1">
-                                        <h3 className="text-xl font-medium text-foreground">Battery Assembly Worker</h3>
+                                        <h3 className="text-xl font-medium text-foreground">Electrical Manufacturing Intern</h3>
                                         <span className="text-sm text-muted-foreground whitespace-nowrap">Jan. 2026 – Feb. 2026</span>
                                     </div>
                                     <div className="flex justify-between items-start mb-2">
@@ -53,7 +64,17 @@ const ResumPortfolio = () => {
                                         <span className="text-sm text-muted-foreground whitespace-nowrap">Sep. 2025 – Present</span>
                                     </div>
                                     <div className="flex justify-between items-start mb-2">
-                                        <p className="text-muted-foreground font-medium">UW Orbital (Cubesat Student Design Team)</p>
+                                        <p className="text-muted-foreground font-medium">
+                                            <a
+                                                href="https://uworbital.com/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="hover:text-blue-500 hover:underline underline-offset-2 transition-colors inline-flex items-center gap-1.5 group"
+                                            >
+                                                UW Orbital (Cubesat Student Design Team)
+                                                <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-blue-500 transition-colors" />
+                                            </a>
+                                        </p>
                                         <span className="text-sm text-muted-foreground">Waterloo, ON</span>
                                     </div>
                                     <ul className="list-disc list-outside ml-5 text-muted-foreground space-y-1 text-sm">
@@ -72,7 +93,17 @@ const ResumPortfolio = () => {
                                         <span className="text-sm text-muted-foreground whitespace-nowrap">June 2025 – Present</span>
                                     </div>
                                     <div className="flex justify-between items-start mb-2">
-                                        <p className="text-muted-foreground font-medium">Midnight Sun (Solar-Car Student Design Team)</p>
+                                        <p className="text-muted-foreground font-medium">
+                                            <a
+                                                href="https://uwmidsun.com/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="hover:text-blue-500 hover:underline underline-offset-2 transition-colors inline-flex items-center gap-1.5 group"
+                                            >
+                                                Midnight Sun (Solar-Car Student Design Team)
+                                                <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-blue-500 transition-colors" />
+                                            </a>
+                                        </p>
                                         <span className="text-sm text-muted-foreground">Waterloo, ON</span>
                                     </div>
                                     <ul className="list-disc list-outside ml-5 text-muted-foreground space-y-1 text-sm">
@@ -91,7 +122,17 @@ const ResumPortfolio = () => {
 
                 {/* Portfolio Section */}
                 <section className="w-full md:w-1/2 overflow-y-auto p-6 md:p-8 flex flex-col bg-gray-50/50 min-h-[calc(100vh-64px)] md:min-h-0">
-                    <h1 className="font-heading text-4xl font-bold text-foreground mb-6 underline decoration-4 underline-offset-8 decoration-gray-300">Portfolio</h1>
+                    <a
+                        href="https://docs.google.com/document/d/1cjarATqfdeBMlyrC_wjG3ItjF4LHCx7yvUqeIvClDrw/edit?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-fit mb-6 block group"
+                    >
+                        <div className="flex items-center gap-3">
+                            <h1 className="font-heading text-4xl font-bold text-foreground underline decoration-4 underline-offset-8 decoration-gray-300 group-hover:text-blue-600 group-hover:decoration-blue-400 transition-colors cursor-pointer">Portfolio</h1>
+                            <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" />
+                        </div>
+                    </a>
 
                     {/* 1. BMS Analog Front End Board */}
                     <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">

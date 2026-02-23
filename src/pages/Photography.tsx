@@ -38,9 +38,13 @@ const Showcase = () => {
       <Navbar />
       <section className="container max-w-5xl px-6 py-8 flex-grow flex flex-col justify-start">
         <h1 className="font-heading text-4xl font-bold text-foreground mb-4">Photography Showcase</h1>
-        <p className="font-body text-muted-foreground mb-8 text-lg">
+        <p className="font-body text-muted-foreground mb-4 text-lg">
           Welcome to my photography showcase! I mainly take pictures of birds across Canada, but I do occasionally take snapshots of flora and other animals.
         </p>
+        <div className="font-body text-muted-foreground mb-8 bg-white p-4 rounded-xl border border-gray-100 shadow-sm text-sm flex flex-col md:flex-row gap-2 md:items-center">
+          <span className="font-semibold text-foreground whitespace-nowrap">My Gear:</span>
+          <span>EOS Canon T7, EF-S 55-250mm f/4-5.6 IS STM. Photos edited w/ Lightroom Classic.</span>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {categories.map((category, index) => (
@@ -51,9 +55,6 @@ const Showcase = () => {
           ))}
         </div>
 
-        <p className="font-body text-muted-foreground mt-auto pt-8 border-t border-gray-200">
-          My current rig is a EOS Canon T7, paired with an EF-S 55-250mm f/4-5.6 IS STM. I find the 55-250mm a great budget lens and recommend it for those looking for those looking for a telephoto lens without breaking the bank. I edit all my photos on Adobe Lightroom Classic.
-        </p>
       </section>
     </main>
   );

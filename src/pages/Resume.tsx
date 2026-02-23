@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { ExternalLink } from "lucide-react";
 
 
 const Resume = () => {
@@ -6,7 +7,17 @@ const Resume = () => {
         <main className="min-h-screen bg-neutral-50 flex flex-col">
             <Navbar />
             <section className="container max-w-5xl px-6 py-8 flex-grow flex flex-col">
-                <h1 className="font-heading text-4xl font-bold text-foreground mb-6 underline decoration-4 underline-offset-8 decoration-gray-300">Resume</h1>
+                <a
+                    href="https://www.overleaf.com/read/kmxqfqwpzydx#561208"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-fit mb-6 block group"
+                >
+                    <div className="flex items-center gap-3">
+                        <h1 className="font-heading text-4xl font-bold text-foreground underline decoration-4 underline-offset-8 decoration-gray-300 group-hover:text-blue-600 group-hover:decoration-blue-400 transition-colors cursor-pointer">Resume</h1>
+                        <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" />
+                    </div>
+                </a>
 
                 <div className="space-y-8">
                     {/* Education */}
@@ -29,7 +40,7 @@ const Resume = () => {
                             {/* Downhole Battery Inc */}
                             <div className="border-l-2 border-gray-200 pl-4 py-1">
                                 <div className="flex justify-between items-start mb-1">
-                                    <h3 className="text-xl font-medium text-foreground">Battery Assembly Worker</h3>
+                                    <h3 className="text-xl font-medium text-foreground">Electrical Manufacturing Intern</h3>
                                     <span className="text-sm text-muted-foreground whitespace-nowrap">Jan. 2026 – Feb. 2026</span>
                                 </div>
                                 <div className="flex justify-between items-start mb-2">
@@ -50,7 +61,17 @@ const Resume = () => {
                                     <span className="text-sm text-muted-foreground whitespace-nowrap">Sep. 2025 – Present</span>
                                 </div>
                                 <div className="flex justify-between items-start mb-2">
-                                    <p className="text-muted-foreground font-medium">UW Orbital (Cubesat Student Design Team)</p>
+                                    <p className="text-muted-foreground font-medium">
+                                        <a
+                                            href="https://uworbital.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="hover:text-blue-500 hover:underline underline-offset-2 transition-colors inline-flex items-center gap-1.5 group"
+                                        >
+                                            UW Orbital (Cubesat Student Design Team)
+                                            <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-blue-500 transition-colors" />
+                                        </a>
+                                    </p>
                                     <span className="text-sm text-muted-foreground">Waterloo, ON</span>
                                 </div>
                                 <ul className="list-disc list-outside ml-5 text-muted-foreground space-y-1 text-sm">
@@ -69,7 +90,17 @@ const Resume = () => {
                                     <span className="text-sm text-muted-foreground whitespace-nowrap">June 2025 – Present</span>
                                 </div>
                                 <div className="flex justify-between items-start mb-2">
-                                    <p className="text-muted-foreground font-medium">Midnight Sun (Solar-Car Student Design Team)</p>
+                                    <p className="text-muted-foreground font-medium">
+                                        <a
+                                            href="https://uwmidsun.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="hover:text-blue-500 hover:underline underline-offset-2 transition-colors inline-flex items-center gap-1.5 group"
+                                        >
+                                            Midnight Sun (Solar-Car Student Design Team)
+                                            <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-blue-500 transition-colors" />
+                                        </a>
+                                    </p>
                                     <span className="text-sm text-muted-foreground">Waterloo, ON</span>
                                 </div>
                                 <ul className="list-disc list-outside ml-5 text-muted-foreground space-y-1 text-sm">

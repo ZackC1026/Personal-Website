@@ -16,7 +16,7 @@ const PhotoCategoryCard = ({ title, image, description, to, objectPosition }: Ph
             className="group block border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
         >
             {/* Cover Image */}
-            <div className="w-full h-48 overflow-hidden bg-gray-100 relative flex items-center justify-center">
+            <div className="w-full h-56 sm:h-64 overflow-hidden bg-gray-100 relative flex items-center justify-center">
                 {image ? (
                     <>
                         <img

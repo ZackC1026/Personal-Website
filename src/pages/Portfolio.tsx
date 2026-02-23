@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
+import { ExternalLink } from "lucide-react";
 
 
 const Portfolio = () => {
@@ -7,7 +8,17 @@ const Portfolio = () => {
         <main className="min-h-screen bg-neutral-50 flex flex-col">
             <Navbar />
             <section className="container max-w-5xl px-6 py-8 flex-grow flex flex-col bg-gray-50/50">
-                <h1 className="font-heading text-4xl font-bold text-foreground mb-6 underline decoration-4 underline-offset-8 decoration-gray-300">Portfolio</h1>
+                <a
+                    href="https://docs.google.com/document/d/1cjarATqfdeBMlyrC_wjG3ItjF4LHCx7yvUqeIvClDrw/edit?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-fit mb-6 block group"
+                >
+                    <div className="flex items-center gap-3">
+                        <h1 className="font-heading text-4xl font-bold text-foreground underline decoration-4 underline-offset-8 decoration-gray-300 group-hover:text-blue-600 group-hover:decoration-blue-400 transition-colors cursor-pointer">Portfolio</h1>
+                        <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" />
+                    </div>
+                </a>
 
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
                     <ProjectCard
