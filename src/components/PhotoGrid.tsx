@@ -74,9 +74,20 @@ const PhotoGrid = ({ photos }: PhotoGridProps) => {
                     </Dialog>
 
                     <div className="pt-2 pb-2 px-2 text-center bg-white border-t border-gray-50 mt-auto space-y-1">
-                        <p className="font-body text-sm text-gray-700 font-medium leading-tight">
-                            {photo.description}
-                        </p>
+                        <div className="font-body text-sm text-gray-700 font-medium leading-tight">
+                            {(() => {
+                                const match = photo.description.match(/^(.*?)\s*(\([^)]+\))$/);
+                                if (match) {
+                                    return (
+                                        <>
+                                            <span className="block">{match[1]}</span>
+                                            <span className="block mt-0.5 text-gray-500 font-normal">{match[2]}</span>
+                                        </>
+                                    );
+                                }
+                                return photo.description;
+                            })()}
+                        </div>
                         {photo.exif && (
                             <p className="font-mono text-[10px] text-gray-400 tracking-wide uppercase">
                                 {photo.exif}

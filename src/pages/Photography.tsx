@@ -2,20 +2,22 @@ import Navbar from "@/components/Navbar";
 import PhotoCategoryCard from "@/components/PhotoCategoryCard";
 
 import birdsThumbnail from "@/assets/IMG_9506_comp.jpg";
+import floraThumbnail from "@/assets/IMG_9076.jpg";
 
 const Showcase = () => {
   const categories = [
     {
       title: "Birds",
-      description: "Capturing the beauty of avian life across Canada.",
+      description: "My favourite and main type of photography",
       image: birdsThumbnail,
       to: "/photography/birds"
     },
     {
       title: "Flora",
       description: "Close-up shots of flowers, plants, and botanical details.",
-      image: "", // Insert image URL here
-      to: "/photography/flora"
+      image: floraThumbnail,
+      to: "/photography/flora",
+      objectPosition: "0% 30%"
     },
     {
       title: "Buildings",

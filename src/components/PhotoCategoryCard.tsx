@@ -6,9 +6,10 @@ interface PhotoCategoryCardProps {
     image?: string;
     description: string;
     to: string;
+    objectPosition?: string;
 }
 
-const PhotoCategoryCard = ({ title, image, description, to }: PhotoCategoryCardProps) => {
+const PhotoCategoryCard = ({ title, image, description, to, objectPosition }: PhotoCategoryCardProps) => {
     return (
         <Link
             to={to}
@@ -22,6 +23,7 @@ const PhotoCategoryCard = ({ title, image, description, to }: PhotoCategoryCardP
                             src={image}
                             alt={title}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            style={{ objectPosition: objectPosition || 'center' }}
                         />
                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                     </>
