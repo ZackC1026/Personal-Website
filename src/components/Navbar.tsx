@@ -11,11 +11,33 @@ import {
 
 const navItems = [
   { label: "Home", path: "/", showOnMobile: true, showOnDesktop: true },
-  { label: "Resume & Portfolio", path: "/experience", showOnMobile: false, showOnDesktop: true },
-  { label: "Resume", mobileLabel: "Resume", path: "/resume", showOnMobile: true, showOnDesktop: false },
-  { label: "Portfolio", mobileLabel: "Portfolio", path: "/portfolio", showOnMobile: true, showOnDesktop: false },
-  { label: "Photography Showcase", mobileLabel: "Photos", path: "/photography", showOnMobile: true, showOnDesktop: true },
-  { label: "Blog", path: "/blog", showOnMobile: true, showOnDesktop: true },
+  {
+    label: "Resume & Portfolio",
+    path: "/experience",
+    showOnMobile: false,
+    showOnDesktop: true,
+  },
+  {
+    label: "Resume",
+    mobileLabel: "Resume",
+    path: "/resume",
+    showOnMobile: true,
+    showOnDesktop: false,
+  },
+  {
+    label: "Portfolio",
+    mobileLabel: "Portfolio",
+    path: "/portfolio",
+    showOnMobile: true,
+    showOnDesktop: false,
+  },
+  {
+    label: "Photography Showcase",
+    mobileLabel: "Photos",
+    path: "/photography",
+    showOnMobile: true,
+    showOnDesktop: true,
+  },
 ];
 
 const Navbar = () => {
@@ -36,29 +58,36 @@ const Navbar = () => {
               <ArrowLeft className="w-5 h-5" />
             </button>
           )}
-          <Link to="/" className="font-heading text-lg font-semibold text-white">
+          <Link
+            to="/"
+            className="font-heading text-lg font-semibold text-white"
+          >
             Zack Chen
           </Link>
         </div>
 
         {/* Desktop navigation - Centered */}
-        <ul className="hidden md:flex items-center gap-6 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 whitespace-nowrap">
-          {navItems.filter(item => item.showOnDesktop).map((item) => (
-            <li key={item.path}>
-              <Link
-                to={item.path}
-                className={cn(
-                  "font-body text-sm tracking-wide transition-colors hover:text-blue-400",
-                  location.pathname === item.path
-                    ? "text-white font-medium"
-                    : "text-gray-400"
-                )}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden md:flex flex-grow justify-center whitespace-nowrap">
+          <ul className="flex items-center gap-6">
+            {navItems
+              .filter((item) => item.showOnDesktop)
+              .map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    className={cn(
+                      "font-body text-sm tracking-wide transition-colors hover:text-blue-400",
+                      location.pathname === item.path
+                        ? "text-white font-medium"
+                        : "text-gray-400",
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </div>
 
         {/* Right Side (Contact Dropdown & Mobile Toggle) */}
         <div className="flex items-center gap-4 z-10">
@@ -69,7 +98,10 @@ const Navbar = () => {
                 <DropdownMenuTrigger className="flex items-center gap-1 font-body text-sm font-medium text-white hover:text-blue-400 transition-colors outline-none">
                   Contact Me <ChevronDown className="w-4 h-4" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="bg-black border-gray-800 text-gray-300">
+                <DropdownMenuContent
+                  align="end"
+                  className="bg-black border-gray-800 text-gray-300"
+                >
                   <DropdownMenuItem className="focus:bg-gray-900 focus:text-white cursor-pointer">
                     <a
                       href="mailto:zack.chen@uwaterloo.ca"
@@ -110,22 +142,24 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-black border-t border-gray-800">
           <ul className="flex flex-col py-4">
-            {navItems.filter(item => item.showOnMobile).map((item) => (
-              <li key={item.path}>
-                <Link
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    "font-body text-sm tracking-wide transition-colors hover:text-blue-400 block px-6 py-3",
-                    location.pathname === item.path
-                      ? "text-white font-medium bg-gray-900"
-                      : "text-gray-400"
-                  )}
-                >
-                  {item.mobileLabel || item.label}
-                </Link>
-              </li>
-            ))}
+            {navItems
+              .filter((item) => item.showOnMobile)
+              .map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={cn(
+                      "font-body text-sm tracking-wide transition-colors hover:text-blue-400 block px-6 py-3",
+                      location.pathname === item.path
+                        ? "text-white font-medium bg-gray-900"
+                        : "text-gray-400",
+                    )}
+                  >
+                    {item.mobileLabel || item.label}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </div>
       )}
@@ -134,4 +168,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

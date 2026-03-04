@@ -39,7 +39,7 @@ const Index = () => {
               I'm a current electrical engineering student at The University of Waterloo that's passionate about electronic hardware. I have experience developing and assembling electronics and I'm always keen to learn more and keep developing my skills.
             </p>
             <p className="font-body text-base text-gray-100 leading-relaxed drop-shadow-sm font-medium">
-              Feel free to check out my resume & portfolio, my blog, or my photos!
+              Feel free to check out my resume & portfolio, or my photos!
             </p>
 
 
