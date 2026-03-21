@@ -49,12 +49,12 @@ const Resume = () => {
                             {/* UW Orbital */}
                             <div className="border-l-2 border-gray-200 pl-4 py-1">
                                 <div className="flex justify-between items-start mb-1">
-                                    <h3 className="text-xl font-medium text-foreground">Electrical Engineering Team Member</h3>
+                                    <h3 className="text-xl font-medium text-foreground">Electrical Team Lead</h3>
                                     <span className="text-sm text-muted-foreground whitespace-nowrap">Sep. 2025 – Present</span>
                                 </div>
                                 <div className="flex justify-between items-start mb-2">
                                     <p className="text-muted-foreground font-medium">
-                                        UW Orbital (Cubesat Student Design Team)
+                                        UW Orbital (Satellite Student Design Team)
                                     </p>
                                     <span className="text-sm text-muted-foreground">Waterloo, ON</span>
                                 </div>
@@ -70,7 +70,7 @@ const Resume = () => {
                             {/* Midnight Sun */}
                             <div className="border-l-2 border-gray-200 pl-4 py-1">
                                 <div className="flex justify-between items-start mb-1">
-                                    <h3 className="text-xl font-medium text-foreground">Electrical Engineering Team Member</h3>
+                                    <h3 className="text-xl font-medium text-foreground">Electrical Team Member</h3>
                                     <span className="text-sm text-muted-foreground whitespace-nowrap">June 2025 – Present</span>
                                 </div>
                                 <div className="flex justify-between items-start mb-2">
