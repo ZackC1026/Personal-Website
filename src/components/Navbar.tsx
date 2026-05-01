@@ -12,24 +12,16 @@ import {
 const navItems = [
   { label: "Home", path: "/", showOnMobile: true, showOnDesktop: true },
   {
-    label: "Resume & Portfolio",
-    path: "/experience",
-    showOnMobile: false,
+    label: "Resume",
+    path: "/resume",
+    showOnMobile: true,
     showOnDesktop: true,
   },
   {
-    label: "Resume",
-    mobileLabel: "Resume",
-    path: "/resume",
-    showOnMobile: true,
-    showOnDesktop: false,
-  },
-  {
     label: "Portfolio",
-    mobileLabel: "Portfolio",
     path: "/portfolio",
     showOnMobile: true,
-    showOnDesktop: false,
+    showOnDesktop: true,
   },
   {
     label: "Photography Showcase",
@@ -48,7 +40,8 @@ const Navbar = () => {
   return (
     <nav className="w-full border-b border-neutral-800 bg-black sticky top-0 z-50">
       <div className="container max-w-5xl px-6 py-4 flex items-center justify-between relative">
-        <div className="flex items-center gap-4 z-10">
+        {/* Left Side */}
+        <div className="flex flex-1 items-center justify-start gap-4 z-10">
           {location.pathname.startsWith("/photography/") && (
             <button
               onClick={() => navigate("/photography")}
@@ -67,8 +60,8 @@ const Navbar = () => {
         </div>
 
         {/* Desktop navigation - Centered */}
-        <div className="hidden md:flex flex-grow justify-center whitespace-nowrap">
-          <ul className="flex items-center gap-6">
+        <div className="hidden md:flex justify-center whitespace-nowrap">
+          <ul className="flex items-center gap-14">
             {navItems
               .filter((item) => item.showOnDesktop)
               .map((item) => (
@@ -90,42 +83,40 @@ const Navbar = () => {
         </div>
 
         {/* Right Side (Contact Dropdown & Mobile Toggle) */}
-        <div className="flex items-center gap-4 z-10">
-          {/* Contact Dropdown - Only show on non-home pages */}
-          {location.pathname !== "/" && (
-            <div className="hidden md:block">
-              <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center gap-1 font-body text-sm font-medium text-white hover:text-blue-400 transition-colors outline-none">
-                  Contact Me <ChevronDown className="w-4 h-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent
-                  align="end"
-                  className="bg-black border-gray-800 text-gray-300"
-                >
-                  <DropdownMenuItem className="focus:bg-gray-900 focus:text-white cursor-pointer">
-                    <a
-                      href="mailto:zack.chen@uwaterloo.ca"
-                      className="flex items-center gap-2 w-full"
-                    >
-                      <Mail className="w-4 h-4" />
-                      <span>Email</span>
-                    </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="focus:bg-gray-900 focus:text-white cursor-pointer">
-                    <a
-                      href="https://www.linkedin.com/in/zackchenuw/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 w-full"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                      <span>LinkedIn</span>
-                    </a>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
-          )}
+        <div className="flex flex-1 items-center justify-end gap-4 z-10">
+          {/* Contact Dropdown */}
+          <div className="hidden md:block">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 font-body text-sm font-medium text-white hover:text-blue-400 transition-colors outline-none">
+                Contact Me <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="end"
+                className="bg-black border-gray-800 text-gray-300"
+              >
+                <DropdownMenuItem className="focus:bg-gray-900 focus:text-white cursor-pointer">
+                  <a
+                    href="mailto:zack.chen@uwaterloo.ca"
+                    className="flex items-center gap-2 w-full"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span>Email</span>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="focus:bg-gray-900 focus:text-white cursor-pointer">
+                  <a
+                    href="https://www.linkedin.com/in/zackchenuw/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 w-full"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    <span>LinkedIn</span>
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
 
           {/* Mobile hamburger button */}
           <button

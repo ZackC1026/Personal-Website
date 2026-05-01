@@ -1,7 +1,15 @@
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 
-
+import attiny85ProgrammerImg from "@/assets/portfolio/Attiny85Programmer.png";
+import batteryCheckerImg from "@/assets/portfolio/Battery Checker.png";
+import boostConverterImg from "@/assets/portfolio/Boost Converter.png";
+import led555Img from "@/assets/portfolio/LED_555.png";
+import solarCellSolderingImg from "@/assets/portfolio/SolarCellSoldering.png";
+import solarCellTestingImg from "@/assets/portfolio/SolarCellTesting.png";
+import solarCellsDataImg from "@/assets/portfolio/SolarCellsData.png";
+import nfcBusinessCardImg from "@/assets/portfolio/NFC_BUISNESSCARD.png";
+import mainImg from "@/assets/Main.jpg";
 
 const Portfolio = () => {
     return (
@@ -9,46 +17,24 @@ const Portfolio = () => {
             <Navbar />
             <section className="container max-w-5xl px-6 py-8 flex-grow flex flex-col bg-gray-50/50">
                 <div className="w-fit mb-6 block">
-                    <h1 className="font-heading text-4xl font-bold text-foreground underline decoration-4 underline-offset-8 decoration-gray-300">Portfolio</h1>
+                    <h1 className="font-heading text-4xl font-bold text-foreground underline decoration-4 underline-offset-8 decoration-gray-300">
+                        <a href="https://docs.google.com/document/d/1cjarATqfdeBMlyrC_wjG3ItjF4LHCx7yvUqeIvClDrw/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+                            Portfolio
+                        </a>
+                    </h1>
                 </div>
 
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
                     <ProjectCard
                         title="BMS Analog Front End Board"
                         date="2025"
-                        image=""
-                        tags={["Altium Designer", "PCB Design", "Analog Electronics", "BMS"]}
+                        image={mainImg}
+                        tags={["Altium Designer", "PCB Design", "Layout Design", "BMS"]}
                         description={[
-                            "Engineered BMS analog front end board that detects batteries with off voltages and dissipates them to keep balance",
-                            "Implemented best PCB design practice through differential routing for sensitive ISO-SPI channels, copper pour for power (onboard buck), GND vias, and teardrops on vias for increased manufacturability",
-                            "Redesigned AFE layout from a N.VME form factor to a custom B2B connector setup, increasing board surface area and heat dissipation by 20%, leading to easier handling and replacement when servicing"
-                        ]}
-                        photos={[]}
-                    />
-
-                    <ProjectCard
-                        title="AA & AAA Battery Health Checker"
-                        date="2026"
-                        image=""
-                        tags={["Embedded Systems", "C", "Microcontrollers", "PCB", "Soldering"]}
-                        description={[
-                            "Designed PCB board that measures open circuit voltage and voltage under load for AA and AAA batteries to calculate internal resistance and determine battery health using indicator LEDs",
-                            "Programmed ATmega328 MCU using Arduino programmer to run custom firmware to measure voltage using ADC and drive lowside MOSFETs for load resistors",
-                            "Optimized board to run off CR2032 coin cell battery through purpose placement of decoupling caps and use of voltage divider for ADC"
-                        ]}
-                        photos={[]}
-                    />
-
-                    <ProjectCard
-                        title="5V - 28V Boost Converter"
-                        date="2025"
-                        image=""
-                        tags={["Power Electronics", "LTspice", "Altium Designer", "Research"]}
-                        description={[
-                            "Selected TPS55340 IC for boost through calculating switching current needed for our use case",
-                            "Scraped TPS55340 data sheet to configure feedback, comp network, and frequency pins to achieve 28V output to 5V input in 28ms. Documenting results and calculations in Notion",
-                            "Ran LTspice simulations to see and test transient startup/responses to load mimicking real use case",
-                            "Engineered boost breakout board for real life testing using Altium designer. Used copper pours to handle high currents up to 5A, adding testpoints and LED indicators, and minimizing current loop & thermal relief through stitching vias"
+                            "Re-engineered the Battery Management System (BMS) Analog Front End (AFE) to execute passive cell balancing, actively monitoring and dissipating excess cell voltage to ensure pack stability",
+                            "Spearheaded a complete layout redesign, migrating from a restrictive M.2 form factor to a custom board-to-board connector configuration",
+                            "Increased the total PCB surface area by 40%, enhancing thermal dissipation and improving field serviceability",
+                            "Implemented best PCB design practice through differential routing for sensitive Iso-SPI channels, test pads for important nets, copper pour for power (onboard buck), GND vias, and teardrops on vias for increased manufacturability"
                         ]}
                         photos={[]}
                     />
@@ -59,9 +45,37 @@ const Portfolio = () => {
                         image=""
                         tags={["IoT", "Sensors", "PCB Design", "Low Power", "Soldering"]}
                         description={[
-                            "Designed a PCB for monitoring soil moisture, temperature, and sunlight.",
-                            "Optimized for low power consumption to run on batteries.",
-                            "Logged data to a central server for analysis."
+                            "Engineered a 4-layer, LiPo-powered IoT environmental monitor from schematic capture to PCB layout, integrating an ESP32-C3, an I2C SHT-40 air sensor, and an astable CMOS 555 timer for capacitive soil moisture sensing",
+                            "Designed a custom capacitive probe utilizing specific polygon pours and keepouts to maximize fringing electric fields, ensuring high-sensitivity moisture detection while minimizing parasitic capacitance",
+                            "Developed a discrete power-path management circuit utilizing a P-Channel MOSFET and Schottky diode to enable seamless load-sharing and safe, concurrent LiPo battery charging via a TP4056B IC.",
+                            "Implemented rigorous PCB layout best practices, including strategic decoupling capacitor placement, antenna keepouts on the board edge, 90-ohm differential routing for USB 2.0, power trace widening, via stitching, teardrops, and thermal reliefs for large ICs"
+                        ]}
+                        photos={[]}
+                    />
+
+                    <ProjectCard
+                        title="5V - 28V Boost Converter"
+                        date="2025"
+                        image={boostConverterImg}
+                        tags={["Power Electronics", "LTspice", "Altium Designer", "Research"]}
+                        description={[
+                            <>Selected TPS55340 IC for boost through calculating switching current needed for our use case using <a href="https://www.ti.com/lit/an/slva372d/slva372d.pdf?ts=1777104273372" target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-gray-700">TI’s documentation</a></>,
+                            <>Scraped TPS55340 data sheet to configure feedback, comp network, and frequency pins to achieve 28V output to 5V input in 28ms. Documenting results and calculations in teams <a href="https://www.notion.so/uworbital/Boost-Source-Converter-Breakout-board-2eb8a26d7677807aafc1d849d8999c7d" target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-gray-700">Notion</a></>,
+                            "Ran LTspice simulations to see and test transient startup/responses to load mimicking real use case, configuring output capacitors such that output voltage drops less than 5% when load switches on",
+                            "Engineered boost breakout board for real life testing using Altium designer. Used copper pours to handle high currents up to 5A, adding testpoints and LED indicators, and minimizing current loop & thermal relief through stitching vias",
+                            "Verified components in BOM can handle switching velocity and current, choosing smaller package inductor and diode for ease of layout and selecting larger package capacitors to minimize DC-bias and higher current capacity"
+                        ]}
+                        photos={[]}
+                    />
+
+                    <ProjectCard
+                        title="AA & AAA Battery Health Checker"
+                        date="2026"
+                        image={batteryCheckerImg}
+                        tags={["Microcontrollers", "C/C++", "PCB Design", "Soldering"]}
+                        description={[
+                            "Engineered a custom PCB utilizing an ATtiny85 MCU to evaluate battery health by calculating internal resistance, achieved through open-circuit and MOSFET-switched load voltage measurements",
+                            "Designed a compact, ergonomic board layout featuring integrated mounting points, tactile user input, and a clear LED diagnostic feedback system"
                         ]}
                         photos={[]}
                     />
@@ -69,11 +83,11 @@ const Portfolio = () => {
                     <ProjectCard
                         title="Heartbeat PCB"
                         date="2026"
-                        image=""
-                        tags={["Medical Electronics", "Analog Design", "PCB", "Signal Processing", "Soldering"]}
+                        image={led555Img}
+                        tags={["Analog Design", "PCB Design", "Soldering", "Teaching"]}
                         description={[
-                            "Used 555-Timers Astable mode to create a 16x heart shaped LED blinker PCB",
-                            "Designed PCB layout and board shape to be aesthetically pleasing, allowing ease of soldering for couples to assemble and gift"
+                            "Engineered an educational LED-array PCB driven by an astable 555-timer circuit with variable frequency control",
+                            "Mentored young students through the hardware lifecycle, providing hands-on instruction in fundamental circuit design and safe soldering practices for board assembly"
                         ]}
                         photos={[]}
                     />
@@ -81,38 +95,39 @@ const Portfolio = () => {
                     <ProjectCard
                         title="Solar Cell Work"
                         date="2025"
-                        image=""
+                        image={solarCellSolderingImg}
                         tags={["Solar Panels", "Soldering", "Testing"]}
                         description={[
-                            "Developed a repeatable soldering technique for solar panels.",
-                            "Achieved 100% assembly success rate across multiple units.",
-                            "Performed electrical characterization (IV curves) using variable loads."
+                            "Developed a highly reliable mounting technique utilizing 0-ohm resistors and precisely calibrated hot-air rework parameters (high heat, low airflow velocity, and a specific incidence angle)",
+                            "Characterized solar panel performance utilizing a digital multimeter and decade box to measure baseline open-circuit voltage and short-circuit current.",
+                            "Swept load resistance to gather high-resolution voltage data in ~0.1V increments, ensuring high-fidelity data sets for Maximum Power Point Tracking (MPPT) calculations",
+                            <>Generated I-V curves and calculated the Maximum Power Point (MPP), aggregating all raw data and performance metrics into a centralized spreadsheet for <a href="https://www.notion.so/uworbital/Solar-Board-REV-2-1f28a26d767780bd95c7f922a14ca06b" target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-gray-700">ongoing electrical analysis</a></>
                         ]}
-                        photos={[]}
+                        photos={[
+                            { url: solarCellTestingImg, caption: "Characterizing Solar Cells w/ DMM and Decade Box" },
+                            { url: solarCellsDataImg, caption: "Solar Cell Voltage/Current/Power Charts" }
+                        ]}
                     />
 
                     <ProjectCard
                         title="NFC PCB Business Card"
                         date="2025"
-                        image=""
+                        image={nfcBusinessCardImg}
                         tags={["NFC", "PCB Design", "React", "Next.js"]}
                         description={[
-                            "Built a minimalist NFC card that encodes a URL to my portfolio.",
-                            "Designed the PCB antenna and layout for optimal coupling.",
-                            "Integrated with a cloud-hosted digital portfolio."
+                            "Designed an NFC based PCB business card utilizing a trace antenna to seamlessly transmit contact data to mobile devices",
+                            "Leveraged parasitic energy harvesting to power the circuit entirely from the interrogating device's RF field, completely eliminating the need for an onboard battery"
                         ]}
                         photos={[]}
                     />
 
                     <ProjectCard
-                        title="5V-3.3V Buck Converter"
-                        date="2025"
-                        image=""
-                        tags={["Power Electronics", "Buck Converter", "PCB Design", "Testing"]}
+                        title="Arduino UNO R3-ATtiny85 Programming Shield"
+                        date="2026"
+                        image={attiny85ProgrammerImg}
+                        tags={["PCB Design", "Arduino", "Microcontrollers"]}
                         description={[
-                            "Designed a DC-DC buck converter to step down 5V to 3.3V.",
-                            "Selected components for optimal efficiency and ripple reduction.",
-                            "Validated output voltage stability under varying load conditions."
+                            "Designed a custom programming shield for the Arduino UNO R3 to program ATtiny85 microcontrollers."
                         ]}
                         photos={[]}
                     />

@@ -7,8 +7,9 @@ interface ProjectCardProps {
     date: string;
     image: string;
     tags: string[];
-    description: string[];
-    photos?: string[];
+    description: React.ReactNode[];
+    status?: string;
+    photos?: { url: string; caption?: string }[];
     links?: { label: string; url: string; icon?: "github" | "demo" }[];
 }
 
@@ -18,6 +19,7 @@ const ProjectCard = ({
     image,
     tags,
     description,
+    status,
     photos = [],
     links = [],
 }: ProjectCardProps) => {
@@ -30,16 +32,23 @@ const ProjectCard = ({
                 <img
                     src={image}
                     alt={title}
-                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                    className="w-full h-full object-contain transition-transform hover:scale-105 duration-500"
                 />
             </div>
 
             <div className="p-5">
-                <div className="mb-4">
+                <div className="mb-4 flex items-center flex-wrap gap-x-4 gap-y-2">
                     <h3 className="font-heading text-xl font-bold text-foreground leading-tight">
                         {title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mt-1">{date}</p>
+                    <div className="flex items-center gap-3">
+                        <p className="text-sm text-muted-foreground font-medium">{date}</p>
+                        {status && (
+                            <span className="px-2.5 py-0.5 bg-gray-100 text-xs font-semibold text-gray-600 rounded-full border border-gray-200">
+                                {status}
+                            </span>
+                        )}
+                    </div>
                 </div>
 
                 {/* Tags */}
@@ -73,24 +82,27 @@ const ProjectCard = ({
                         >
                             {isExpanded ? (
                                 <>
-                                    Hide schematic & layout <ChevronUp className="w-4 h-4" />
+                                    Hide extra pictures <ChevronUp className="w-4 h-4" />
                                 </>
                             ) : (
                                 <>
-                                    View schematic & layout ({photos.length}) <ChevronDown className="w-4 h-4" />
+                                    View extra pictures ({photos.length}) <ChevronDown className="w-4 h-4" />
                                 </>
                             )}
                         </button>
 
                         <div
                             className={cn(
-                                "grid grid-cols-2 gap-2 mt-3 overflow-hidden transition-all duration-300 ease-in-out",
+                                "grid grid-cols-2 gap-4 mt-3 overflow-hidden transition-all duration-300 ease-in-out",
                                 isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
                             )}
                         >
                             {photos.map((photo, index) => (
-                                <div key={index} className="aspect-video bg-gray-100 rounded-md overflow-hidden">
-                                    <img src={photo} alt={`Project photo ${index + 1}`} className="w-full h-full object-cover" />
+                                <div key={index} className="flex flex-col gap-2">
+                                    <div className="aspect-video bg-gray-100 rounded-md overflow-hidden relative">
+                                        <img src={photo.url} alt={photo.caption || `Project photo ${index + 1}`} className="w-full h-full object-contain" />
+                                    </div>
+                                    {photo.caption && <p className="text-xs text-center text-muted-foreground font-medium px-1">{photo.caption}</p>}
                                 </div>
                             ))}
                         </div>
