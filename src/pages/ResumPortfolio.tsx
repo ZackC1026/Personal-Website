@@ -1,14 +1,14 @@
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 
-
-import batteryCheckerImg from "@/assets/portfolio/Battery Checker.png";
-import boostConverterImg from "@/assets/portfolio/Boost Converter.png";
-import led555Img from "@/assets/portfolio/LED_555.png";
-import solarCellSolderingImg from "@/assets/portfolio/SolarCellSoldering.png";
-import solarCellTestingImg from "@/assets/portfolio/SolarCellTesting.png";
-import solarCellsDataImg from "@/assets/portfolio/SolarCellsData.png";
-import nfcBusinessCardImg from "@/assets/portfolio/NFC_BUISNESSCARD.png";
+import attiny85ProgrammerImg from "@/assets/Attiny85Programmer.png";
+import batteryCheckerImg from "@/assets/Battery Checker.png";
+import boostConverterImg from "@/assets/Boost Converter.png";
+import led555Img from "@/assets/LED_555.png";
+import solarCellSolderingImg from "@/assets/SolarCellSoldering.png";
+import solarCellTestingImg from "@/assets/SolarCellTesting.png";
+import solarCellsDataImg from "@/assets/SolarCellsData.png";
+import nfcBusinessCardImg from "@/assets/NFC_BUISNESSCARD.png";
 import mainImg from "@/assets/Main.jpg";
 
 const ResumPortfolio = () => {
@@ -230,7 +230,7 @@ const ResumPortfolio = () => {
                             className="mb-6 break-inside-avoid"
                             title="Arduino UNO R3-ATtiny85 Programming Shield"
                             date="2026"
-                            image=""
+                            image={attiny85ProgrammerImg}
                             tags={["PCB Design", "Arduino", "Microcontrollers"]}
                             description={[
                                 "Designed a custom programming shield for the Arduino UNO R3 to program ATtiny85 microcontrollers."
