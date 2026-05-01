@@ -115,8 +115,9 @@ const ResumPortfolio = () => {
                     </div>
 
                     {/* 1. BMS Analog Front End Board */}
-                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                    <div className="columns-1 xl:columns-2 gap-6">
                         <ProjectCard
+                            className="mb-6 break-inside-avoid"
                             title="BMS Analog Front End Board"
                             date="2025"
                             image={mainImg}
@@ -132,6 +133,7 @@ const ResumPortfolio = () => {
 
                         {/* 2. Garden Monitor PCB */}
                         <ProjectCard
+                            className="mb-6 break-inside-avoid"
                             title="Garden Monitor PCB"
                             date="2026"
                             image=""
@@ -147,6 +149,7 @@ const ResumPortfolio = () => {
 
                         {/* 3. 5V - 28V Boost Converter */}
                         <ProjectCard
+                            className="mb-6 break-inside-avoid"
                             title="5V - 28V Boost Converter"
                             date="2025"
                             image={boostConverterImg}
@@ -163,6 +166,7 @@ const ResumPortfolio = () => {
 
                         {/* 4. AA & AAA Battery Health Checker */}
                         <ProjectCard
+                            className="mb-6 break-inside-avoid"
                             title="AA & AAA Battery Health Checker"
                             date="2026"
                             image={batteryCheckerImg}
@@ -176,6 +180,7 @@ const ResumPortfolio = () => {
 
                         {/* 5. Heartbeat PCB */}
                         <ProjectCard
+                            className="mb-6 break-inside-avoid"
                             title="Heartbeat PCB"
                             date="2026"
                             image={led555Img}
@@ -189,6 +194,7 @@ const ResumPortfolio = () => {
 
                         {/* 6. Solar Cell Work */}
                         <ProjectCard
+                            className="mb-6 break-inside-avoid"
                             title="Solar Cell Work"
                             date="2025"
                             image={solarCellSolderingImg}
@@ -207,6 +213,7 @@ const ResumPortfolio = () => {
 
                         {/* 7. NFC PCB Business Card */}
                         <ProjectCard
+                            className="mb-6 break-inside-avoid"
                             title="NFC PCB Business Card"
                             date="2025"
                             image={nfcBusinessCardImg}
@@ -220,6 +227,7 @@ const ResumPortfolio = () => {
 
                         {/* 8. Arduino UNO R3 ATtiny85 programming shield */}
                         <ProjectCard
+                            className="mb-6 break-inside-avoid"
                             title="Arduino UNO R3-ATtiny85 Programming Shield"
                             date="2026"
                             image={attiny85ProgrammerImg}

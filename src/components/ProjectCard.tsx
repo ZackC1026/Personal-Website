@@ -11,6 +11,7 @@ interface ProjectCardProps {
     status?: string;
     photos?: { url: string; caption?: string }[];
     links?: { label: string; url: string; icon?: "github" | "demo" }[];
+    className?: string;
 }
 
 const ProjectCard = ({
@@ -22,11 +23,12 @@ const ProjectCard = ({
     status,
     photos = [],
     links = [],
+    className,
 }: ProjectCardProps) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
+        <div className={cn("border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow", className)}>
             {/* Cover Image */}
             <div className="w-full h-48 overflow-hidden bg-gray-100 relative">
                 <img
