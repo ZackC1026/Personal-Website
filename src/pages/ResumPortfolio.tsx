@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 
-import attiny85ProgrammerImg from "@/assets/portfolio/Attiny85Programmer.png";
+
 import batteryCheckerImg from "@/assets/portfolio/Battery Checker.png";
 import boostConverterImg from "@/assets/portfolio/Boost Converter.png";
 import led555Img from "@/assets/portfolio/LED_555.png";
@@ -230,7 +230,7 @@ const ResumPortfolio = () => {
                             className="mb-6 break-inside-avoid"
                             title="Arduino UNO R3-ATtiny85 Programming Shield"
                             date="2026"
-                            image={attiny85ProgrammerImg}
+                            image=""
                             tags={["PCB Design", "Arduino", "Microcontrollers"]}
                             description={[
                                 "Designed a custom programming shield for the Arduino UNO R3 to program ATtiny85 microcontrollers."
