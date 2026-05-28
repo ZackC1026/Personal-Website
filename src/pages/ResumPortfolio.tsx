@@ -1,9 +1,12 @@
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 
-import attiny85ProgrammerImg from "@/assets/Attiny85Programmer.png";
-import batteryCheckerImg from "@/assets/Battery Checker.png";
-import boostConverterImg from "@/assets/Boost Converter.png";
+import attiny85ProgrammerImg from "@/assets/ATTINY85PROGRAMMER.png";
+import batMonitorImg from "@/assets/BATMONITOR.png";
+import boostImg from "@/assets/BOOST.png";
+import bmsAfeImg from "@/assets/BMSAFE.png";
+import gardenMonitorImg from "@/assets/GARDENMONITORIOT.png";
+import hornDriverImg from "@/assets/HORNDRIVER.png";
 import led555Img from "@/assets/LED_555.png";
 import solarCellSolderingImg from "@/assets/SolarCellSoldering.png";
 import solarCellTestingImg from "@/assets/SolarCellTesting.png";
@@ -40,23 +43,6 @@ const ResumPortfolio = () => {
                             <h2 className="text-2xl font-semibold mb-4 text-foreground">Experience</h2>
                             <div className="space-y-6">
 
-                                {/* Downhole Battery Inc */}
-                                <div className="border-l-2 border-gray-200 pl-4 py-1">
-                                    <div className="flex justify-between items-start mb-1">
-                                        <h3 className="text-xl font-medium text-foreground">Electrical Manufacturing Intern</h3>
-                                        <span className="text-sm text-muted-foreground whitespace-nowrap">Jan. 2026 – Feb. 2026</span>
-                                    </div>
-                                    <div className="flex justify-between items-start mb-2">
-                                        <p className="text-muted-foreground font-medium">Downhole Battery Inc</p>
-                                        <span className="text-sm text-muted-foreground">Calgary, AB</span>
-                                    </div>
-                                    <ul className="list-disc list-outside ml-5 text-muted-foreground space-y-1 text-sm">
-                                        <li>Assembled battery packs for downhole drilling applications, executing precision soldering and interconnect welding</li>
-                                        <li>Validated battery pack integrity, including voltage and continuity, utilizing digital multimeters and decade boxes</li>
-                                        <li>Executed quality assurance checks, identifying and resolving assembly defects to meet strict operational tolerances</li>
-                                    </ul>
-                                </div>
-
                                 {/* UW Orbital */}
                                 <div className="border-l-2 border-gray-200 pl-4 py-1">
                                     <div className="flex justify-between items-start mb-1">
@@ -70,14 +56,14 @@ const ResumPortfolio = () => {
                                         <span className="text-sm text-muted-foreground">Waterloo, ON</span>
                                     </div>
                                     <ul className="list-disc list-outside ml-5 text-muted-foreground space-y-1 text-sm">
-                                        <li>Managed the electrical sub-team by delegating technical tasks, maintaining engineering documentation, and managing project budgets</li>
-                                        <li>Oversaw final validation of satellite boards before competing in the 'Canadian Space Design Challenge 7'</li>
-                                        <li>Guided perspective members through onboarding, designing a current-sensing PCB from schematic to assembly</li>
-                                        <li>Simulated transient responses in LTspice to configure a 5V to 28V boost converter IC, subsequently designing a breakout board in Altium Designer for physical validation</li>
-                                        <li>Integrated a buck converter breakout board schematic and layout into 6-layer electrical power system board</li>
-                                        <li>Developed a highly repeatable solar cell soldering procedure, preventing unwanted shorts and ensuring stable joints</li>
-                                        <li>Performed electrical characterization of solar panels using variable resistive loads and DMMs to verify open-circuit voltage, short-circuit current, and maximum power point</li>
-                                        <li>Designed and assembled 100V/V Op-Amp breakout board for low side current sense applications</li>
+                                        <li>Engineered a 5V to 28V DC-DC boost converter breakout board in Altium Designer, validating transient load responses in LTspice and authoring a comprehensive board bring-up guide to enable team assembly and testing</li>
+                                        <li>Integrated an MPPT breakout board schematic and layout into 6-layer electrical power system board</li>
+                                        <li>Developed a 95% successful solar cell soldering procedure, preventing short circuits and ensuring stable joints</li>
+                                        <li>Performed electrical characterization of solar panels using variable resistive loads and DMMs to verify open-circuit voltage, short-circuit current, and maximum power point to define system power budgets</li>
+                                        <li>Managed 25-person electrical sub-team through supporting team meetings, developing short- and long-term goals, delegating technical tasks, maintaining engineering documentation and managing project budgets</li>
+                                        <li>Oversaw validation of the satellite’s electrical system before competing in the ’Canadian Space Design Challenge 7’</li>
+                                        <li>Guided prospective members through onboarding, designing a 100V/V Op-Amp PCB from schematic to assembly</li>
+                                        <li>Spearheaded lab safety compliance by sourcing Safety Data Sheets (SDS) and authoring best practice documents</li>
                                     </ul>
                                 </div>
 
@@ -85,7 +71,7 @@ const ResumPortfolio = () => {
                                 <div className="border-l-2 border-gray-200 pl-4 py-1">
                                     <div className="flex justify-between items-start mb-1">
                                         <h3 className="text-xl font-medium text-foreground">Electrical Team Member</h3>
-                                        <span className="text-sm text-muted-foreground whitespace-nowrap">June 2025 – April 2026</span>
+                                        <span className="text-sm text-muted-foreground whitespace-nowrap">June 2025 – Present</span>
                                     </div>
                                     <div className="flex justify-between items-start mb-2">
                                         <p className="text-muted-foreground font-medium">
@@ -94,10 +80,25 @@ const ResumPortfolio = () => {
                                         <span className="text-sm text-muted-foreground">Waterloo, ON</span>
                                     </div>
                                     <ul className="list-disc list-outside ml-5 text-muted-foreground space-y-1 text-sm">
-                                        <li>Engineered an STM32-driven piezo speaker PCB featuring a flyback converter and a discrete MOSFET full-bridge</li>
-                                        <li>Redesigned analog front end BMS board layout, improving heat dissipation during passive cell balancing</li>
-                                        <li>Performed PCB bring-up and troubleshooting using lab instruments to validate power and signal integrity</li>
-                                        <li>Designed a DC-DC buck converter PCB in Altium Designer to step down 5V to 3V3</li>
+                                        <li>Engineering an STM32-based piezo car horn driver with a flyback converter and a discrete MOSFET full-bridge</li>
+                                        <li>Redesigned analog front end BMS board layout by switching from an M.2 connector to custom board-to-board connectors, improving heat dissipation during passive cell balancing through increased surface area and heat-sinks</li>
+                                    </ul>
+                                </div>
+
+                                {/* Downhole Battery Inc */}
+                                <div className="border-l-2 border-gray-200 pl-4 py-1">
+                                    <div className="flex justify-between items-start mb-1">
+                                        <h3 className="text-xl font-medium text-foreground">Electrical Manufacturing Intern</h3>
+                                        <span className="text-sm text-muted-foreground whitespace-nowrap">February 2026</span>
+                                    </div>
+                                    <div className="flex justify-between items-start mb-2">
+                                        <p className="text-muted-foreground font-medium">Downhole Battery Inc.</p>
+                                        <span className="text-sm text-muted-foreground">Calgary, AB</span>
+                                    </div>
+                                    <ul className="list-disc list-outside ml-5 text-muted-foreground space-y-1 text-sm">
+                                        <li>Assembled battery packs for underground drilling applications, executing harness soldering and spot welding</li>
+                                        <li>Validated battery pack integrity, including voltage and continuity using digital multimeters and electronic-loads</li>
+                                        <li>Supported quality assurance checks, identifying and resolving assembly defects to meet strict operational tolerances</li>
                                     </ul>
                                 </div>
 
@@ -120,7 +121,7 @@ const ResumPortfolio = () => {
                             className="mb-6 break-inside-avoid"
                             title="BMS Analog Front End Board"
                             date="2025"
-                            image={mainImg}
+                            image={bmsAfeImg}
                             tags={["Altium Designer", "PCB Design", "Layout Design", "BMS"]}
                             description={[
                                 "Re-engineered the Battery Management System (BMS) Analog Front End (AFE) to execute passive cell balancing, actively monitoring and dissipating excess cell voltage to ensure pack stability",
@@ -136,7 +137,7 @@ const ResumPortfolio = () => {
                             className="mb-6 break-inside-avoid"
                             title="5V - 28V Boost Converter"
                             date="2025"
-                            image={boostConverterImg}
+                            image={boostImg}
                             tags={["Power Electronics", "LTspice", "Altium Designer", "Research"]}
                             description={[
                                 <>Selected TPS55340 IC through calculating switching current needed for our use case using <a href="https://www.ti.com/lit/an/slva372d/slva372d.pdf?ts=1777104273372" target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-gray-700">TI’s documentation</a></>,
@@ -145,6 +146,76 @@ const ResumPortfolio = () => {
                                 "Engineered breakout board for real life testing using Altium designer adding testpoints and LED indicators to aid in board bring-up",
                                 "Implemented best layout principles through strategic placements of MLCCs minimizing hotloop and used Saturn PCB Toolkit to verify thermal capabilities",
                                 "Verified components in BOM can handle switching velocity and current, choosing smaller package inductor and diode for ease of layout and selecting larger package capacitors to minimize DC-bias and higher current capacity"
+                            ]}
+                            photos={[]}
+                        />
+
+                        {/* 8. Arduino UNO R3 ATtiny85 programming shield */}
+                        <ProjectCard
+                            className="mb-6 break-inside-avoid"
+                            title="Arduino UNO R3-ATtiny85 Programming Shield"
+                            date="2026"
+                            image={attiny85ProgrammerImg}
+                            tags={["PCB Design", "Arduino", "Microcontrollers"]}
+                            description={[
+                                "Designed a custom programming shield for the Arduino UNO R3 to program ATtiny85 microcontrollers."
+                            ]}
+                            photos={[]}
+                        />
+
+                        {/* 4. Heartbeat PCB */}
+                        <ProjectCard
+                            className="mb-6 break-inside-avoid"
+                            title="Heartbeat PCB"
+                            date="2026"
+                            image={led555Img}
+                            tags={["Analog Design", "PCB Design", "Soldering", "Teaching"]}
+                            description={[
+                                "Engineered an educational LED-array PCB driven by an astable 555-timer circuit with variable frequency control",
+                                "Mentored young students through the hardware lifecycle, providing hands-on instruction in fundamental circuit design and safe soldering practices for board assembly"
+                            ]}
+                            photos={[]}
+                        />
+
+                        {/* 5. Garden Monitor PCB */}
+                        <ProjectCard
+                            className="mb-6 break-inside-avoid"
+                            title="Garden Monitor PCB"
+                            date="2026"
+                            image={gardenMonitorImg}
+                            tags={["IoT", "Sensors", "PCB Design", "Low Power", "Soldering"]}
+                            description={[
+                                "Engineered a 4-layer, LiPo-powered IoT environmental monitor from schematic capture to PCB layout, integrating an ESP32-C3, an I2C SHT-40 air sensor, and an astable CMOS 555 timer for capacitive soil moisture sensing",
+                                "Designed a custom capacitive probe utilizing specific polygon pours and keepouts to maximize fringing electric fields, ensuring high-sensitivity moisture detection while minimizing parasitic capacitance",
+                                "Developed a discrete power-path management circuit utilizing a P-Channel MOSFET and Schottky diode to enable seamless load-sharing and safe, concurrent LiPo battery charging via a TP4056B IC.",
+                                "Implemented rigorous PCB layout best practices, including strategic decoupling capacitor placement, antenna keepouts on the board edge, 90-ohm differential routing for USB 2.0, power trace widening, via stitching, teardrops, and thermal reliefs for large ICs"
+                            ]}
+                            photos={[]}
+                        />
+
+                        {/* 6. AA & AAA Battery Health Checker */}
+                        <ProjectCard
+                            className="mb-6 break-inside-avoid"
+                            title="AA & AAA Battery Health Checker"
+                            date="2026"
+                            image={batMonitorImg}
+                            tags={["Microcontrollers", "C/C++", "PCB Design", "Soldering"]}
+                            description={[
+                                "Engineered a custom PCB utilizing an ATtiny85 MCU to evaluate battery health by calculating internal resistance, achieved through open-circuit and MOSFET-switched load voltage measurements",
+                                "Designed a compact, ergonomic board layout featuring integrated mounting points, tactile user input, and a clear LED diagnostic feedback system"
+                            ]}
+                            photos={[]}
+                        />
+
+                        <ProjectCard
+                            className="mb-6 break-inside-avoid"
+                            title="STM32 Piezo Car Horn Driver"
+                            date="2025"
+                            image={hornDriverImg}
+                            tags={["STM32", "Power Electronics", "PCB Design", "Midnight Sun"]}
+                            description={[
+                                "Engineering an STM32-based piezo car horn driver utilizing a flyback converter and a discrete MOSFET full-bridge",
+                                "Designing the control circuitry and power stage for high-efficiency sound generation and robust power delivery"
                             ]}
                             photos={[]}
                         />
@@ -168,50 +239,6 @@ const ResumPortfolio = () => {
                             ]}
                         />
 
-                        {/* 4. Heartbeat PCB */}
-                        <ProjectCard
-                            className="mb-6 break-inside-avoid"
-                            title="Heartbeat PCB"
-                            date="2026"
-                            image={led555Img}
-                            tags={["Analog Design", "PCB Design", "Soldering", "Teaching"]}
-                            description={[
-                                "Engineered an educational LED-array PCB driven by an astable 555-timer circuit with variable frequency control",
-                                "Mentored young students through the hardware lifecycle, providing hands-on instruction in fundamental circuit design and safe soldering practices for board assembly"
-                            ]}
-                            photos={[]}
-                        />
-
-                        {/* 5. Garden Monitor PCB */}
-                        <ProjectCard
-                            className="mb-6 break-inside-avoid"
-                            title="Garden Monitor PCB"
-                            date="2026"
-                            image=""
-                            tags={["IoT", "Sensors", "PCB Design", "Low Power", "Soldering"]}
-                            description={[
-                                "Engineered a 4-layer, LiPo-powered IoT environmental monitor from schematic capture to PCB layout, integrating an ESP32-C3, an I2C SHT-40 air sensor, and an astable CMOS 555 timer for capacitive soil moisture sensing",
-                                "Designed a custom capacitive probe utilizing specific polygon pours and keepouts to maximize fringing electric fields, ensuring high-sensitivity moisture detection while minimizing parasitic capacitance",
-                                "Developed a discrete power-path management circuit utilizing a P-Channel MOSFET and Schottky diode to enable seamless load-sharing and safe, concurrent LiPo battery charging via a TP4056B IC.",
-                                "Implemented rigorous PCB layout best practices, including strategic decoupling capacitor placement, antenna keepouts on the board edge, 90-ohm differential routing for USB 2.0, power trace widening, via stitching, teardrops, and thermal reliefs for large ICs"
-                            ]}
-                            photos={[]}
-                        />
-
-                        {/* 6. AA & AAA Battery Health Checker */}
-                        <ProjectCard
-                            className="mb-6 break-inside-avoid"
-                            title="AA & AAA Battery Health Checker"
-                            date="2026"
-                            image={batteryCheckerImg}
-                            tags={["Microcontrollers", "C/C++", "PCB Design", "Soldering"]}
-                            description={[
-                                "Engineered a custom PCB utilizing an ATtiny85 MCU to evaluate battery health by calculating internal resistance, achieved through open-circuit and MOSFET-switched load voltage measurements",
-                                "Designed a compact, ergonomic board layout featuring integrated mounting points, tactile user input, and a clear LED diagnostic feedback system"
-                            ]}
-                            photos={[]}
-                        />
-
                         {/* 7. NFC PCB Business Card */}
                         <ProjectCard
                             className="mb-6 break-inside-avoid"
@@ -222,19 +249,6 @@ const ResumPortfolio = () => {
                             description={[
                                 "Designed an NFC based PCB business card utilizing a trace antenna to seamlessly transmit contact data to mobile devices",
                                 "Leveraged parasitic energy harvesting to power the circuit entirely from the interrogating device's RF field, completely eliminating the need for an onboard battery"
-                            ]}
-                            photos={[]}
-                        />
-
-                        {/* 8. Arduino UNO R3 ATtiny85 programming shield */}
-                        <ProjectCard
-                            className="mb-6 break-inside-avoid"
-                            title="Arduino UNO R3-ATtiny85 Programming Shield"
-                            date="2026"
-                            image={attiny85ProgrammerImg}
-                            tags={["PCB Design", "Arduino", "Microcontrollers"]}
-                            description={[
-                                "Designed a custom programming shield for the Arduino UNO R3 to program ATtiny85 microcontrollers."
                             ]}
                             photos={[]}
                         />
